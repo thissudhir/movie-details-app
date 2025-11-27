@@ -1,4 +1,4 @@
-interface Movie {
+interface MovieProps {
   id: number;
   title: string;
   adult: boolean;

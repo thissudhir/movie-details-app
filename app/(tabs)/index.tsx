@@ -1,11 +1,12 @@
+import { useRouter } from "expo-router";
+import { ActivityIndicator, FlatList, Image, ScrollView, Text, View } from "react-native";
+
 import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { fetchPopularMovies } from "@/services/api";
 import useFetch from "@/hooks/useFetch";
-import { useRouter } from "expo-router";
-import { ActivityIndicator, FlatList, Image, ScrollView, Text, View } from "react-native";
+import { fetchPopularMovies } from "@/services/api";
 
 export default function Index() {
     const router = useRouter();
@@ -37,7 +38,7 @@ export default function Index() {
                                 numColumns={3}
                                 columnWrapperStyle={{
                                     justifyContent: 'flex-start',
-                                    gap: 15,
+                                    gap: 16,
                                     marginBottom: 10,
                                     paddingRight: 5,
                                 }}

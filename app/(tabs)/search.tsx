@@ -19,14 +19,14 @@ const Search = () => {
     } = useFetch(() => fetchPopularMovies({ query: searchQuery }), false);
 
     useEffect(() => {
-        const fun = async () => {
+        const timeoutFetch = setTimeout(async () => {
             if (searchQuery.trim()) {
                 loadMovies();
             } else {
                 reset();
             }
-        }
-        fun();
+        }, 500); // Debounce time of 500ms
+        return () => clearTimeout(timeoutFetch);
     }, [searchQuery]);
 
     return (
@@ -73,7 +73,19 @@ const Search = () => {
                         )}
                     </>
                 }
+                ListEmptyComponent={
+                    !moviesLoading && !moviesError ? (
+                        <View className="mt-10 px-5">
+                            <Text className="text-center text-gray-500">
+                                {searchQuery.trim()
+                                    ? "No movies found"
+                                    : "Start typing to search for movies"}
+                            </Text>
+                        </View>
+                    ) : null
+                }
             />
+
         </View>
     )
 }

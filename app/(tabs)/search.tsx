@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native'
 
 import MovieCard from '@/components/MovieCard'
@@ -14,8 +14,20 @@ const Search = () => {
         data: movies,
         loading: moviesLoading,
         error: moviesError,
-        refetch
+        refetch: loadMovies,
+        reset
     } = useFetch(() => fetchPopularMovies({ query: searchQuery }), false);
+
+    useEffect(() => {
+        const fun = async () => {
+            if (searchQuery.trim()) {
+                loadMovies();
+            } else {
+                reset();
+            }
+        }
+        fun();
+    }, [searchQuery]);
 
     return (
         <View className='flex-1 bg-primary'>
@@ -54,8 +66,8 @@ const Search = () => {
                         {moviesError && (
                             <Text className='text-red-500 px-5 my-3'>Error loading movies: {moviesError.message}</Text>
                         )}
-                        {!moviesLoading && !moviesError && searchQuery.trim() && movies?.length > 0 && (
-                            <Text className='text-white text-xl font-bold'>Search Result for
+                        {!moviesLoading && !moviesError && searchQuery.trim() && movies?.length! > 0 && (
+                            <Text className='text-white text-xl font-bold'>Search Result for {''}
                                 <Text className='text-accent'>{searchQuery}</Text>
                             </Text>
                         )}

@@ -30,13 +30,17 @@ const MovieDetails = () => {
                         <Text className='text-yellow-400 text-sm ml-1'>{movies?.vote_average}/10 ({movies?.vote_count} votes)</Text>
                     </View>
                     <MovieInfo label="Overview" value={movies?.overview} />
-                    {/* <MovieInfo label="Genres" value={movies?.genres?.map((g) => g.name).join(' - ') || ' N / A'} /> */}
+                    <MovieInfo label="Genres" value={movies?.genres?.map((g) => g.name).join(' - ') || ' N / A'} />
                     <View className='flex flex-row justify-between w-1/2'>
-                        {/* <MovieInfo label="Original Language" value={movies?.original_language?.toUpperCase()} /> */}
-                        {/* <MovieInfo label="Budget" value={`$${movies.budget / 1000000} million`} /> */}
-                        {/* <MovieInfo label="Revenue" value={`$${movies.revenue / 1000000} million`} /> */}
+                        <MovieInfo label="Budget" value={`$${movies?.budget ? movies.budget / 1000000 : 0} million`} />
+                        <MovieInfo label="Revenue" value={`$${movies?.revenue ? movies.revenue / 1000000 : 0} million`} />
                     </View>
                     <MovieInfo label="Production Companies" value={movies?.production_companies?.map((c) => c.name).join(' - ') || ' N / A'} />
+                    <View className='flex flex-row justify-between w-1/2'>
+                        <MovieInfo label="Original Language" value={movies?.original_language?.toUpperCase()} />
+                        <MovieInfo label="Status" value={movies?.status} />
+                    </View>
+                    <MovieInfo label="Tagline" value={movies?.tagline} />
                 </View>
             </ScrollView>
             <TouchableOpacity className='absolute left-0 right-0 bottom-5 py-3.5 bg-accent z-50 mx-5 rounded-full flex-row items-center justify-center' onPress={router.back}>

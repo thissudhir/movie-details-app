@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
+import Feather from '@expo/vector-icons/Feather';
 import { Tabs } from 'expo-router';
 import React from 'react';
-
 const _Layout = () => {
     return (
         <Tabs screenOptions={{
@@ -44,7 +44,7 @@ const _Layout = () => {
             }} />
             <Tabs.Screen name="profile" options={{
                 title: "Profile", headerShown: false, tabBarIcon: ({ color, size }) => (
-                    <Ionicons name="menu" size={size} color={color} />
+                    <Feather name="user" size={size} color={color} />
                 ),
             }} />
         </Tabs>

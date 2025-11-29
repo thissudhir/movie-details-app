@@ -13,6 +13,7 @@ interface MovieProps {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  rank: number;
 }
 
 interface TrendingMovie {

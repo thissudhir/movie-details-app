@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
@@ -18,9 +18,13 @@ const MovieDetails = () => {
                         source={{ uri: `https://image.tmdb.org/t/p/w500${movies?.poster_path}` }} className='w-full h-[550px]'
                         resizeMode='stretch'
                     />
+
                 </View>
                 <View className='flex-col items-start justify-center mt-5 px-5'>
-                    <Text className='text-white text-3xl font-bold mb-3'>{movies?.title}</Text>
+                    <View className='flex-row items-center justify-between w-full'>
+                        <Text className='text-white text-3xl font-bold mb-3'>{movies?.title}</Text>
+                        <MaterialIcons name="bookmark-add" size={28} color="red" />
+                    </View>
                     <View className='flex-row item-center gap-x-1 mt-1'>
                         <Text className='text-light-200 text-sm'>{movies?.release_date}</Text>
                         <Text className='text-light-200 text-sm'>{movies?.runtime}minute</Text>

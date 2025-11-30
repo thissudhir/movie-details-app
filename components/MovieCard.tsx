@@ -1,9 +1,19 @@
-import { Ionicons } from '@expo/vector-icons'
-import { Link } from 'expo-router'
-import React from 'react'
-import { Image, Text, TouchableOpacity, View } from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Link } from 'expo-router';
+import React from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 const MovieCard = ({ id, poster_path, title, vote_average, vote_count, release_date }: MovieProps) => {
+    const storeData = async (id: string) => {
+        try {
+            const jsonValue = JSON.stringify(id);
+            await AsyncStorage.setItem('my-key', jsonValue);
+        } catch (e) {
+            console.error('Error storing data', e);
+            throw e;
+        }
+    };
     return (
         <Link href={`/movies/${id}`} asChild>
             <TouchableOpacity className='w-[30%]'>

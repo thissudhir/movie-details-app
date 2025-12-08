@@ -4,7 +4,7 @@
     "slug": "movie-details-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/app-logo.png",
+    "icon": "./assets/images/appLogo.png",
     "scheme": "movie-details-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -14,16 +14,17 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/app-logo.png",
-        "backgroundImage": "./assets/images/app-logo.png",
-        "monochromeImage": "./assets/images/app-logo.png"
+        "foregroundImage": "./assets/images/appLogo.png",
+        "backgroundImage": "./assets/images/appLogo.png",
+        "monochromeImage": "./assets/images/appLogo.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.thissudhir.moviedetailsapp"
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/app-logo.png"
+      "favicon": "./assets/images/appLogo.png"
     },
     "plugins": [
       "expo-router",
@@ -43,6 +44,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "74517caf-0a25-4c40-ab33-9bbf7a851275"
+      }
     }
   }
 }

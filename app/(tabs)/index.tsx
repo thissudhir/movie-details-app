@@ -4,7 +4,6 @@ import { ActivityIndicator, FlatList, Image, RefreshControl, ScrollView, Text, V
 import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 import TrendingCard from "@/components/TrendingCard";
-import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import useFetch from "@/hooks/useFetch";
 import { fetchPopularMovies } from "@/services/api";
@@ -39,7 +38,7 @@ export default function Index() {
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
                 } >
-                <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
+                <Image source={images.appLogo} className="w-20 h-16 mt-20 mb-5 mx-auto" />
 
                 {moviesLoading ? (
                     <ActivityIndicator size="large" color="#ffffff" className="mt-10" />

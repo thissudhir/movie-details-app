@@ -14,6 +14,7 @@ const MovieCard = ({ id, poster_path, title, vote_average, vote_count, release_d
             throw e;
         }
     };
+
     return (
         <Link href={`/movies/${id}`} asChild>
             <TouchableOpacity className='w-[30%]'>

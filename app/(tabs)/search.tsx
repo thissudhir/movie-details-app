@@ -3,7 +3,6 @@ import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native'
 
 import MovieCard from '@/components/MovieCard'
 import SearchBar from '@/components/SearchBar'
-import { icons } from '@/constants/icons'
 import { images } from '@/constants/images'
 import useFetch from '@/hooks/useFetch'
 import { fetchPopularMovies } from '@/services/api'
@@ -51,7 +50,7 @@ const Search = () => {
                 ListHeaderComponent={
                     <>
                         <View className='w-full flex-row justify-center mt-20 items-center'>
-                            <Image source={icons.logo} className='w-12 h-10' />
+                            <Image source={images.appLogo} className='w-20 h-16' />
                         </View>
                         <View className='my-5'>
                             <SearchBar

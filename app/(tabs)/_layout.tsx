@@ -6,8 +6,13 @@ const _Layout = () => {
     return (
         <Tabs screenOptions={{
             tabBarActiveTintColor: "#AB8BFF",
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarInactiveTintColor: "#fff",
+            // tabBarActiveBackgroundColor: "#AB8BFF20",
+            // tabBarInactiveBackgroundColor: "#141",
+            tabBarLabelStyle: {
+                fontSize: 8,
+            },
             tabBarItemStyle: {
                 width: "100%",
                 height: "100%",

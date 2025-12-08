@@ -1,4 +1,3 @@
-import { icons } from '@/constants/icons'
 import { images } from '@/constants/images'
 import { Feather } from '@expo/vector-icons'
 import React, { useState } from 'react'
@@ -27,7 +26,7 @@ const Profile = () => {
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
                 }
             >
-                <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
+                <Image source={images.appLogo} className="w-20 h-16 mt-20 mb-5 mx-auto" />
                 <View className='flex justify-center items-center flex-1 flex-col gap-5 ' >
                     <Feather name="user" size={44} color={"#ffffff"} />
                     <Text className='text-white text-base'>Profile</Text>

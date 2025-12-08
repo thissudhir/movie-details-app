@@ -1,0 +1,49 @@
+{
+  "cli": {
+    "version": ">= 16.26.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://api.themoviedb.org/3",
+        "EXPO_PUBLIC_API_KEY": "cf1c7ddb625e3350ea7cd3acaf970672",
+        "EXPO_PUBLIC_API_ACCESS_TOKEN_KEY": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZjFjN2RkYjYyNWUzMzUwZWE3Y2QzYWNhZjk3MDY3MiIsIm5iZiI6MTc2NDI2NzIwOS42MjUsInN1YiI6IjY5Mjg5NGM5NzNiNTNjYmUxZjI2YzQwNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NwCXMZ8UEZBJaUj6fijG5BvaV8HdhJbbOd1187R7TPc"
+      }
+    },
+    "production": {
+      "autoIncrement": false,
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "distribution": "store"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://api.themoviedb.org/3",
+        "EXPO_PUBLIC_API_KEY": "cf1c7ddb625e3350ea7cd3acaf970672",
+        "EXPO_PUBLIC_API_ACCESS_TOKEN_KEY": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZjFjN2RkYjYyNWUzMzUwZWE3Y2QzYWNhZjk3MDY3MiIsIm5iZiI6MTc2NDI2NzIwOS42MjUsInN1YiI6IjY5Mjg5NGM5NzNiNTNjYmUxZjI2YzQwNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NwCXMZ8UEZBJaUj6fijG5BvaV8HdhJbbOd1187R7TPc"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {},
+      "ios": {}
+    }
+  }
+}

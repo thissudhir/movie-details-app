@@ -1,5 +1,5 @@
 {
-  "name": "ex-native-3",
+  "name": "movie-details-app",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {

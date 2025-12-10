@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { ActivityIndicator, FlatList, Image, RefreshControl, ScrollView, Text, View } from "react-native";
+import { FlatList, Image, RefreshControl, ScrollView, Text, View } from "react-native";
 
 import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
@@ -40,9 +40,7 @@ export default function Index() {
                 } >
                 <Image source={images.appLogo} className="w-20 h-16 mt-20 mb-5 mx-auto" />
 
-                {moviesLoading ? (
-                    <ActivityIndicator size="large" color="#ffffff" className="mt-10" />
-                ) : moviesError ? (
+                {moviesError ? (
                     <Text>Error loading movies: {moviesError.message}</Text>
                 ) : (
                     <View className="flex-1 mt-5" >

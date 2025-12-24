@@ -12,6 +12,9 @@ const MovieDetails = () => {
     const { data: movies, loading, error } = useFetch(() => fetchMovieDetails(id as string));
     return (
         <View className="flex-1 bg-primary">
+            <TouchableOpacity className='absolute w-14 h-14 left-0 right-0 top-10 py-3.5 bg-accent/40 z-50 mx-5 rounded-full flex-row items-center justify-center shadow-md border border-[#BCBCBC] backdrop-blur-sm' onPress={router.back}>
+                <Ionicons name="arrow-back" size={24} color={"#ffffff"} />
+            </TouchableOpacity>
             <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
                 <View>
                     <Image
@@ -47,10 +50,7 @@ const MovieDetails = () => {
                     <MovieInfo label="Tagline" value={movies?.tagline} />
                 </View>
             </ScrollView>
-            <TouchableOpacity className='absolute left-0 right-0 bottom-5 py-3.5 bg-accent z-50 mx-5 rounded-full flex-row items-center justify-center' onPress={router.back}>
-                <Ionicons name="arrow-back" size={14} color={"#ffffff"} />
-                <Text className='text-white font-semibold text-lg ml-2'>Go Back</Text>
-            </TouchableOpacity>
+
         </View>
     )
 }
